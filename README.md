@@ -1,4 +1,4 @@
-Canvas2ImagePlugin
+MediaScannerPlugin
 ============
 
 This plugin allows you to save the contents of an HTML canvas tag to the iOS Photo Library, or Android Gallery from your app.
@@ -8,41 +8,38 @@ Installation
 
 ### For Cordova 3.0.x:
 
-1. To add this plugin just type: `cordova plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git` or `phonegap local plugin add https://github.com/devgeeks/Canvas2ImagePlugin.git`
-2. To remove this plugin type: `cordova plugin remove org.devgeeks.Canvas2ImagePlugin` or `phonegap local plugin remove org.devgeeks.Canvas2ImagePlugin`
+1. To add this plugin just type: `cordova plugin add https://github.com/peteygao/MediaScannerPlugin.git` or `phonegap local plugin add https://github.com/peteygao/MediaScannerPlugin.git`
+2. To remove this plugin type: `cordova plugin remove org.sfl.MediaScannerPlugin` or `phonegap local plugin remove org.sfl.MediaScannerPlugin`
 
-### NOTE: For older versions of Cordova (You will probably have to use tag 0.2.0)
 
 Usage:
 ------
 
-Call the `window.canvas2ImagePlugin.saveImageDataToLibrary()` method using success and error callbacks and the id attribute or the element object of the canvas to save:
+Call the `window.mediaScannerPlugin(successCallback, failureCallback, filePath)` method using success and error callbacks and the filePath of the file to be scanned by the MediaScanner:
 
 ### Example
-```html
-<canvas id="myCanvas" width="165px" height="145px"></canvas>
-```
-
 ```javascript
 function onDeviceReady()
 {
-	window.canvas2ImagePlugin.saveImageDataToLibrary(
+	window.mediaScannerPlugin.scanFile(
         function(msg){
             console.log(msg);
         },
         function(err){
             console.log(err);
         },
-        document.getElementById('myCanvas')
+        '/mnt/sdcard/Download/mediaFile.png'
     );
 }
 ```
+
+The function will return to the successCallback the path to the media file that was originally supplied. So in the above example, the returned message will simply be `'/mnt/sdcard/Download/mediaFile.png'`
 
 ## License
 
 The MIT License
 
-Copyright (c) 2011 Tommy-Carlos Williams (http://github.com/devgeeks)
+Copyright (c) 2013 Peter Gao (http://github.com/peteygao)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
