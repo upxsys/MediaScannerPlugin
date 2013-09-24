@@ -28,12 +28,14 @@ public class MediaScannerPlugin extends CordovaPlugin {
         Log.w(TAG, "Execute statement");
 
         if (action.equals(ACTION)) {
-            JSONObject jsonObj = args.optJSONObject(0)
-            if (jsonObj == null ) {
+            JSONObject jsonObj = args.getJSONObject(0)
+            String filePath = jsonObj.optString("filePath");
+
+            if (filePath == null ) {
                 callbackContext.error("A filepath was not provided.");
                 Log.w(TAG, "A filepath was not provided!");
+                return false;
             } else {
-                String filePath = jsonObj.getString("filePath");
                 Log.w(TAG, "filePath: " + filePath);
             }
 
