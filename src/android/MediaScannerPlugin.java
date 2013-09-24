@@ -29,7 +29,7 @@ public class MediaScannerPlugin extends CordovaPlugin {
                 callbackContext.error("A filepath was not provided.");
             } else {
                 // Update image gallery
-                scanPhoto(imageFile);
+                scanPhoto(filePath);
 
                 callbackContext.success(filePath);
             }
