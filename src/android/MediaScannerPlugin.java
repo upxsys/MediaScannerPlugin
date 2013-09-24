@@ -8,6 +8,7 @@ import org.json.JSONException;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 /**
  * MediaScannerPlugin.java
@@ -27,15 +28,19 @@ public class MediaScannerPlugin extends CordovaPlugin {
         if (action.equals(ACTION)) {
             if (filePath == null) {
                 callbackContext.error("A filepath was not provided.");
+                Log.w("A filepath was not provided!");
             } else {
+                Log.w("scanFile Action");
                 // Update image gallery
                 scanPhoto(filePath);
 
+                Log.w("scanFile Successful");
                 callbackContext.success(filePath);
             }
 
             return true;
         } else {
+            Log.w("Wrong action was provided: "+action);
             return false;
         }
     }
@@ -45,7 +50,8 @@ public class MediaScannerPlugin extends CordovaPlugin {
     private void scanPhoto(String filePath)
     {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        Uri contentUri = Uri.parse(filePath);
+        Uri contentUri = Uri.fromParts("file",filePath);
+        Log.w("URI constructed");
         mediaScanIntent.setData(contentUri);
         cordova.getActivity().sendBroadcast(mediaScanIntent);
     }
