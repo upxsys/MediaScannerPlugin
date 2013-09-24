@@ -59,7 +59,7 @@ public class MediaScannerPlugin extends CordovaPlugin {
     {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri contentUri = Uri.fromParts("file",filePath,"");
-        Log.i(TAG, "Parsed Uri: " + Uri.toString());
+        Log.i(TAG, "Parsed Uri: " + contentUri.toString());
         mediaScanIntent.setData(contentUri);
         cordova.getActivity().sendBroadcast(mediaScanIntent);
     }
