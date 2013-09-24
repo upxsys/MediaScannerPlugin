@@ -15,13 +15,13 @@ Installation
 Usage:
 ------
 
-Call the `window.mediaScannerPlugin(successCallback, failureCallback, filePath)` method using success and error callbacks and the filePath of the file to be scanned by the MediaScanner:
+Call the `window.MediaScannerPlugin(successCallback, failureCallback, filePath)` method using success and error callbacks and the filePath of the file to be scanned by the MediaScanner:
 
 ### Example
 ```javascript
 function onDeviceReady()
 {
-	window.mediaScannerPlugin.scanFile(
+	window.MediaScannerPlugin.scanFile(
         function(msg){
             console.log(msg);
         },
