@@ -12,8 +12,8 @@ import android.net.Uri;
 /**
  * MediaScannerPlugin.java
  *
- * Inspirated by Joseph's "Save HTML5 Canvas Image to Gallery" plugin
- * http://jbkflex.wordpress.com/2013/06/19/save-html5-canvas-image-to-gallery-phonegap-android-plugin/
+ * Inspirated by Joseph's "Saving Image to Android device’s Gallery – Phonegap Android" plugin
+ * https://jbkflex.wordpress.com/2012/12/23/saving-image-to-android-devices-gallery-phonegap-android/
  *
  * @author Peter Gao <peter@spacefluxlabs.com>
  */
