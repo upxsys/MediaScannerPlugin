@@ -28,7 +28,7 @@ public class MediaScannerPlugin extends CordovaPlugin {
         Log.w(TAG, "Execute statement");
 
         if (action.equals(ACTION)) {
-            JSONObject jsonObj = args.getJSONObject(0)
+            JSONObject jsonObj = args.getJSONObject(0);
             String filePath = jsonObj.optString("filePath");
 
             if (filePath == null ) {
