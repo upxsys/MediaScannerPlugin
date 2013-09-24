@@ -20,6 +20,7 @@ import android.util.Log;
  */
 public class MediaScannerPlugin extends CordovaPlugin {
     public static final String ACTION = "scanFile";
+    private static final String TAG = "MediaScannerPlugin";
 
     @Override
     public boolean execute(String action, String filePath,
@@ -28,19 +29,19 @@ public class MediaScannerPlugin extends CordovaPlugin {
         if (action.equals(ACTION)) {
             if (filePath == null) {
                 callbackContext.error("A filepath was not provided.");
-                Log.w("A filepath was not provided!");
+                Log.w(TAG, "A filepath was not provided!");
             } else {
-                Log.w("scanFile Action");
+                Log.w(TAG, "scanFile Action");
                 // Update image gallery
                 scanPhoto(filePath);
 
-                Log.w("scanFile Successful");
+                Log.w(TAG, "scanFile Successful");
                 callbackContext.success(filePath);
             }
 
             return true;
         } else {
-            Log.w("Wrong action was provided: "+action);
+            Log.w(TAG, "Wrong action was provided: "+action);
             return false;
         }
     }
@@ -51,7 +52,7 @@ public class MediaScannerPlugin extends CordovaPlugin {
     {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri contentUri = Uri.fromParts("file",filePath);
-        Log.w("URI constructed");
+        Log.w(TAG, "URI constructed");
         mediaScanIntent.setData(contentUri);
         cordova.getActivity().sendBroadcast(mediaScanIntent);
     }
