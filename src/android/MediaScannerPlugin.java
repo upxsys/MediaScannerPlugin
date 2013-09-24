@@ -23,8 +23,10 @@ public class MediaScannerPlugin extends CordovaPlugin {
     private static final String TAG = "MediaScannerPlugin";
 
     @Override
-    public boolean execute(String action, String filePath,
-            CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Log.w(TAG, "Execute statement");
+        String filePath = args.getJSONObject[0].getString("filePath");
+        Log.w(TAG, "filePath: " + filePath);
 
         if (action.equals(ACTION)) {
             if (filePath == null) {
@@ -52,7 +54,6 @@ public class MediaScannerPlugin extends CordovaPlugin {
     {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri contentUri = Uri.fromParts("file",filePath,"");
-        Log.w(TAG, "URI constructed");
         mediaScanIntent.setData(contentUri);
         cordova.getActivity().sendBroadcast(mediaScanIntent);
     }

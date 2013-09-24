@@ -20,7 +20,7 @@ module.exports = {
             console.log("MediaScannerPlugin Error: filePath is not a string");
         }
         else {
-            return cordova.exec(successCallback, failureCallback, filePath);
+            return cordova.exec(successCallback, failureCallback, "MediaScannerPlugin", "scanFile", [{"filePath": filePath}]);
         }
     }
 };
