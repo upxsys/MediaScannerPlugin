@@ -27,35 +27,16 @@ public class MediaScannerPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals(ACTION)) {
-            JSONObject jsonObj = args.getJSONObject(0);
-            String filePath = jsonObj.optString("filePath");
+            /* Invoke the system's media scanner to add your photo to the Media Provider's database,
+            * making it available in the Android Gallery application and to other apps. */
+            cordova.getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file:///mnt/sdcard"))); 
 
-            if (filePath == null ) {
-                callbackContext.error("A filepath was not provided.");
-                Log.e(TAG, "A filepath was not provided!");
-                return false;
-            }
-
-            // Update image gallery
-            scanPhoto(filePath);
-
-            callbackContext.success(filePath);
+            callbackContext.success();
 
             return true;
         } else {
             Log.w(TAG, "Wrong action was provided: "+action);
             return false;
         }
-    }
-
-    /* Invoke the system's media scanner to add your photo to the Media Provider's database,
-     * making it available in the Android Gallery application and to other apps. */
-    private void scanPhoto(String filePath)
-    {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        Uri contentUri = Uri.parse("file://"+filePath);
-        Log.i(TAG, "Parsed Uri: " + contentUri.toString());
-        mediaScanIntent.setData(contentUri);
-        cordova.getActivity().sendBroadcast(mediaScanIntent);
     }
 }

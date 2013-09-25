@@ -1,13 +1,17 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.sfl.MediaScannerPlugin"
-    version="0.1.0">
+    version="1.1.0">
 
     <name>Media Scanner Plugin</name>
 
     <description>This plugin scans recently added/downloaded files to the Android filesystem so that they will show up to the OS and appear in the Gallery, Media Players, etc.</description>
     <author>Peter Gao - www.spacefluxlabs.com</author>
     <keywords>android,image,photo library,mediascanner</keywords>
+
+    <engine>
+        <engine name="cordova" version=">=2.9.0" />
+    </engine>
 
     <license>MIT</license>
 

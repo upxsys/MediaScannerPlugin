@@ -15,7 +15,7 @@ Installation
 Usage:
 ------
 
-Call the `window.MediaScannerPlugin(successCallback, failureCallback, filePath)` method using success and error callbacks and the filePath of the file to be scanned by the MediaScanner:
+Call the `window.MediaScannerPlugin(successCallback, failureCallback)` method by passing in your success and error callbacks:
 
 ### Example
 ```javascript
@@ -28,12 +28,11 @@ function onDeviceReady()
         function(err){
             console.log(err);
         },
-        '/mnt/sdcard/Download/mediaFile.png'
     );
 }
 ```
 
-The function will return to the successCallback the path to the media file that was originally supplied. So in the above example, the returned message will simply be `'/mnt/sdcard/Download/mediaFile.png'`
+The function will call your successCallback upon success, and failureCallback on failure.
 
 ## License
 

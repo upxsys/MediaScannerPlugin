@@ -9,18 +9,16 @@
 
 module.exports = {
 
-    scanFile:function(successCallback, failureCallback, filePath) {
+    scanFile:function(successCallback, failureCallback) {
         // successCallback required
         if (typeof successCallback !== "function") {
             console.log("MediaScannerPlugin Error: successCallback is not a function");
         }
         else if (typeof failureCallback !== "function") {
             console.log("MediaScannerPlugin Error: failureCallback is not a function");
-        } else if (typeof filePath !== "string") {
-            console.log("MediaScannerPlugin Error: filePath is not a string");
         }
         else {
-            return cordova.exec(successCallback, failureCallback, "MediaScannerPlugin", "scanFile", [{"filePath": filePath}]);
+            return cordova.exec(successCallback, failureCallback, "MediaScannerPlugin", "scanFile", []);
         }
     }
 };
