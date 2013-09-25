@@ -25,7 +25,6 @@ public class MediaScannerPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        Log.w(TAG, "Execute statement");
 
         if (action.equals(ACTION)) {
             JSONObject jsonObj = args.getJSONObject(0);
@@ -33,17 +32,13 @@ public class MediaScannerPlugin extends CordovaPlugin {
 
             if (filePath == null ) {
                 callbackContext.error("A filepath was not provided.");
-                Log.w(TAG, "A filepath was not provided!");
+                Log.e(TAG, "A filepath was not provided!");
                 return false;
-            } else {
-                Log.w(TAG, "filePath: " + filePath);
             }
 
-            Log.w(TAG, "scanFile Action");
             // Update image gallery
             scanPhoto(filePath);
 
-            Log.w(TAG, "scanFile Successful");
             callbackContext.success(filePath);
 
             return true;

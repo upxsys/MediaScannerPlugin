@@ -1,7 +1,7 @@
 MediaScannerPlugin
 ============
 
-This plugin allows you to save the contents of an HTML canvas tag to the iOS Photo Library, or Android Gallery from your app.
+This plugin invokes the Media Scanner on Android OS to add media files to the device's Media Index. If you download an image or a video, you will need to use the Media Scanner to index it before it will show up in the Android Gallery. This plugin will allow you to do that.
 
 Installation
 ------------
@@ -47,7 +47,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Specia Thanks to:
+## Special Thanks
 Tommy-Carlos Williams (https://github.com/devgeeks/Canvas2ImagePlugin)
 
 Joseph Khan (https://jbkflex.wordpress.com/2012/12/23/saving-image-to-android-devices-gallery-phonegap-android/)
