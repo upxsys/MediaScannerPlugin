@@ -5,8 +5,8 @@
 
     <name>Media Scanner Plugin</name>
 
-    <description>This plugin scans recently added/downloaded files to the Android filesystem so that they will show up to the OS and appear in the Gallery, Media Players, etc.</description>
-    <author>Peter Gao - www.spacefluxlabs.com</author>
+    <description>Scans specified file paths to register them in the image gallery, media player...</description>
+    <author>Ouzned - https://github.com/Ouzned</author>
     <keywords>android,image,photo library,mediascanner</keywords>
 
     <engine>
@@ -16,20 +16,18 @@
     <license>MIT</license>
 
     <js-module src="www/MediaScannerPlugin.js" name="MediaScannerPlugin">
-        <clobbers target="window.MediaScannerPlugin" />
+        <clobbers target="window.mediaScannerPlugin" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
-
         <config-file target="res/xml/config.xml" parent="/*">
           <feature name="MediaScannerPlugin" >
-            <param name="android-package" value="org.sfl.MediaScannerPlugin.MediaScannerPlugin"/>
+            <param name="android-package" value="net.mahoneko.MediaScannerPlugin"/>
           </feature>
         </config-file>
 
-        <source-file src="src/android/MediaScannerPlugin.java" 
-            target-dir="src/org/sfl/MediaScannerPlugin" />
-
+        <source-file src="src/net/mahoneko/MediaScannerPlugin.java" 
+            target-dir="src/net/mahoneko/MediaScannerPlugin" />
     </platform>
 </plugin>
