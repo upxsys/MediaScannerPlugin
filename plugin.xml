@@ -16,7 +16,7 @@
     <license>MIT</license>
 
     <js-module src="www/MediaScannerPlugin.js" name="MediaScannerPlugin">
-        <clobbers target="window.mediaScannerPlugin" />
+        <clobbers target="mediaScannerPlugin" />
     </js-module>
 
     <!-- android -->

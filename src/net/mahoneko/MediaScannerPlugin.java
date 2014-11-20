@@ -22,7 +22,7 @@ public class MediaScannerPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-    	Log.d("Action: ", action);
+    	
         if (action.equals(ACTION)) {
         	Context context=this.cordova.getActivity().getApplicationContext();
         	String paramFile = args.getString(0);
