@@ -27,6 +27,8 @@ public class MediaScannerPlugin extends CordovaPlugin {
         	Context context=this.cordova.getActivity().getApplicationContext();
         	String paramFile = args.getString(0);
         	
+        	Log.d("File scanned: ", paramFile);
+        	
         	String[] filePaths = new String[0];
         	filePaths[0] = paramFile;
         	
