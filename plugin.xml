@@ -26,8 +26,5 @@
             <param name="android-package" value="net.mahoneko.MediaScannerPlugin"/>
           </feature>
         </config-file>
-
-        <source-file src="src/net/mahoneko/MediaScannerPlugin.java" 
-            target-dir="src/net/mahoneko/MediaScannerPlugin" />
     </platform>
 </plugin>
