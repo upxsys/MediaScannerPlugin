@@ -23,7 +23,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
           <feature name="MediaScannerPlugin" >
-            <param name="android-package" value="com.upxsys.MediaScannerPlugin"/>
+            <param name="android-package" value="com.upxsys.MediaScannerPlugin.MediaScannerPlugin"/>
           </feature>
         </config-file>
 
