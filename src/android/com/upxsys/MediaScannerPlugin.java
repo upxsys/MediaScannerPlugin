@@ -1,4 +1,4 @@
-package net.mahoneko;
+package com.upxsys;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -14,7 +14,7 @@ import android.util.Log;
 /**
  * MediaScannerPlugin.java
  *
- * Forked from https://github.com/peteygao/MediaScannerPlugin 
+ * Forked from https://github.com/Ouzned/MediaScannerPlugin
  * Adapted for API 19 (KitKat) compatibility
  */
 public class MediaScannerPlugin extends CordovaPlugin {
