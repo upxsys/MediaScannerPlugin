@@ -1,4 +1,4 @@
-package com.upxsys;
+package com.upxsys.MediaScannerPlugin;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
